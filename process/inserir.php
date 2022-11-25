@@ -30,24 +30,24 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO pedidos (cod_cliente, data_time, clientes_cod_cliente)
-VALUES ($id, '$tempo', $id)";
+VALUES ($id, '$tempo', $id)"; //insert 
 
 if ($conn->query($sql) === TRUE) {
   
 
 
-$last_id = $conn->insert_id;
-$cod_pedido = $last_id;
+$last_id = $conn->insert_id; //recupera o ultimo id do banco 
+$cod_pedido = $last_id; //cod pedido igual o ultimo id 
 
-foreach ($_SESSION['carrinho'] as $key => $value){
-
-
-  $id_pedido = $value->Iten;
-  $qtde_produto = $value -> Quantidade;
+foreach ($_SESSION['carrinho'] as $key => $value){ //pesquisa
 
 
-  $sql2 = "INSERT INTO  itenspedidos (cod_pedido, cod_produto , quantidade , produtos_cod_produto,pedidos_cod_pedidos)
-  VALUE ($cod_pedido,$id_pedido,$qtde_produto,$id_pedido,$cod_pedido)";
+  $id_pedido = $value->Iten; // atribuição da classe 
+  $qtde_produto = $value -> Quantidade;// atribuição da classe 
+
+
+  $sql2 = "INSERT INTO  itenspedidos (cod_pedido, cod_produto , quantidade , produtos_cod_produto,pedidos_cod_pedidos,clientes_cod_cliente)
+  VALUE ($cod_pedido,$id_pedido,$qtde_produto,$id_pedido,$cod_pedido,$id)"; //insert 
 
   $q = mysqli_query($conn, $sql2) or die (mysqli_error($conn));
 
@@ -74,9 +74,9 @@ echo '  <div class="container">
 
     </div>
 </div>';
-header('Refresh: 5; URL=../index.php');
+header('Refresh: 5; URL=../index.php'); // redireciona em 5 sc 
 
-unset($_SESSION['carrinho']);
+unset($_SESSION['carrinho']); // limpar o carrinho / sessao 
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }

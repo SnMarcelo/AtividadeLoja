@@ -27,20 +27,16 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
-  $_SESSION['login'] = $login;
-  $_SESSION['status'] = "logado";
-  while($row = $result->fetch_assoc()) {
-    $_SESSION['id'] = $row['cod_cliente'];
+  $_SESSION['login'] = $login; // atribuição 
+  $_SESSION['status'] = "logado"; // atribuição 
+  while($row = $result->fetch_assoc()) { //pesquisa
+    $_SESSION['id'] = $row['cod_cliente']; // atribuição 
   }
   header ('location: ../cart.php');
 
-  
-
-
-
 
 } else {
-    header('Refresh: 5; URL=../login.php');
+    header('Refresh: 5; URL=../login.php'); //rediriciona em 5sc
     echo '  <div class="container">
     <div class="row">
         <div class="col">

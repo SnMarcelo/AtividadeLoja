@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO clientes (nome_completo, email , telefone,username,passwords)
-VALUES ('$nome', '$email' , '$celular','$usuario','$senha')";
+VALUES ('$nome', '$email' , '$celular','$usuario','$senha')"; //Insert dados
 
 if ($conn->query($sql) === TRUE) {
 

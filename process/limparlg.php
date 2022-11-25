@@ -7,3 +7,5 @@ unset($_SESSION['id']);
 
 header('location: ../cart.php');
 ?>
+
+<!--  Limpa as sessoes -->
