@@ -74,6 +74,9 @@ $result = mysqli_query($conn, $sql);
                 <a href="process/remove_all.php?local=cart" type="button" class="btn btn-dark btn-s"
                     style="color:white;font-size:14px;">
                     Limpar Carrinho</a>
+                    <a href="process/clientes.php" type="button" class="btn btn-dark btn-s"
+                    style="color:white;font-size:14px;">
+                    Area Cliente</a>
             </div>
         </div>
         <div class="col-md-4 summary">
