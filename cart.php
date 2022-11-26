@@ -110,7 +110,7 @@ $result = mysqli_query($conn, $sql);
                 <h1 class="modal-title fs-5" id="mdl-confimarLabel">Atenção</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="remove.php" method="get">
+            <form action="process/remove.php" method="get">
                 <div class="modal-body">
                     Remover Esse item Do carrinho?
                     <input type="text" name="id" id="ida" value="" style="display: none;">

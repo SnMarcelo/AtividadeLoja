@@ -46,7 +46,7 @@ foreach ($_SESSION['carrinho'] as $key => $value){ //pesquisa
   $qtde_produto = $value -> Quantidade;// atribuição da classe 
 
 
-  $sql2 = "INSERT INTO  itenspedidos (cod_pedido, cod_produto , quantidade , produtos_cod_produto,pedidos_cod_pedidos,clientes_cod_cliente)
+  $sql2 = "INSERT INTO  itenspedidos (cod_pedido, cod_produto , quantidade , produtos_cod_produto,pedidos_cod_pedidos,clientes_cod_clientes)
   VALUE ($cod_pedido,$id_pedido,$qtde_produto,$id_pedido,$cod_pedido,$id)"; //insert 
 
   $q = mysqli_query($conn, $sql2) or die (mysqli_error($conn));

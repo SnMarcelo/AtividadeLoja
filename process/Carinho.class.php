@@ -102,6 +102,7 @@ function remover()
 {
     unset($_SESSION['carrinho'][$_GET['id']]); 
     unset($_SESSION['qtd'][$_GET['id']]); 
+    header('location: ../cart.php');
 }
 
 
