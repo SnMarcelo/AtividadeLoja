@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
 
-    .btn-s{
-
-        
-    }
+html{
+    font-family: 'Roboto', sans-serif !important;
+   
+}
 .title {
     margin-bottom: 5vh;
 }

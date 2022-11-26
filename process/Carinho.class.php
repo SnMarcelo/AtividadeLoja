@@ -34,8 +34,8 @@ function addcart(){
     $i=1;
     
 
-$produtosa = ['','Ração Pedigree Labrador','Ração Pedigree raças pequenas','Special Ração','Special Ração Tipo T','Special Ração Tipo Y','Special Ração Tipo X'];
-$preso = [0,100,150,150,120,100,160];
+$produtosa = ['','','','Ração Especial Labrador','Ração Pequenas Raças','Ração Labradores Grandes','Ração Pequena X','Ração Normal','Ração Pequena Y'];
+$preso = [0,0,0,134,150,124,30,130,150];
 
 $this->Nome=$produtosa[$this->Iten];
 
@@ -72,8 +72,9 @@ if ($i==1) {
 function alterar()
 {
     $i=0;
-    $produtosa = ['','Ração Pedigree Labrador','Ração Pedigree raças pequenas','Special Ração','Special Ração Tipo T','Special Ração Tipo Y','Special Ração Tipo X'];
-    $preso = [0,100,150,150,120,100,160];
+    $produtosa = ['','','','Ração Especial Labrador','Ração Pequenas Raças','Ração Labradores Grandes','Ração Pequena X','Ração Normal','Ração Pequena Y'];
+    $preso = [0,0,0,134,150,124,30,130,150];
+
     if ($_GET['$acao']==1) {
 
     $this->Valor= $_SESSION['carrinho'][$this->Iten]->Valor+$preso[$_GET['$id']];
@@ -118,11 +119,6 @@ function limpar()
 }
 
 
-function login(){
-    echo 'opa'.$err;
-    
-    header('location: ../cart.php');
-}
 
 
 }

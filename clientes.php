@@ -25,6 +25,14 @@ $sql = "SELECT * FROM clientes WHERE cod_cliente = $id "; //pesquisa
 $result = $conn->query($sql);
 
 
+$sql1 = " SELECT itenspedidos.item_cod_pedido , itenspedidos.cod_pedido , itenspedidos.cod_produto , 
+itenspedidos.quantidade , itenspedidos.produtos_cod_produto, itenspedidos.pedidos_cod_pedidos, 
+itenspedidos.clientes_cod_clientes , produtos.descricao
+FROM itenspedidos INNER JOIN produtos ON produtos.cod_produto = itenspedidos.cod_produto"; //pesquisa 
+$result1 = $conn->query($sql1);
+
+
+
 
 $conn->close();
 
@@ -39,9 +47,9 @@ $conn->close();
             <div class="container">
 
                 <div class="row d-flex justify-content-center mt-5">
-                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-12">
                         <div class="card py-3 px-2">
-                            <?php if ($result->num_rows > 0) { //resultados > 0 
+                            <?php if ($result->num_rows > 0) {  //resultados > 0 
 
                                 
 
@@ -51,10 +59,32 @@ $conn->close();
                             <h3 class="text-center mb-3 mt-2">Seja Bem Vindo</h3>
                             <h4 class="text-center mb-3 mt-2"><?php echo $row["nome_completo"]?></h4>
                             <p class="text-center mb-3 mt-2"> Seus Itens Comprados São </p>
-                            <p class="text-center mb-3 mt-2"> <?php echo $tudo;?></p>
+
+
+                            <?php if($result1 ->num_rows > 0) {?>
+
+                            <?php while($row = $result1->fetch_assoc()){?>
+
+                            <div class="row d-flex justify-content-center mt-2">
+                                <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                                    <div class="card px-2 text-bg-dark">
+                                        <p class="text-center mb-3 mt-3"><strong>Numero do pedido :
+                                            </strong><?php echo $row["item_cod_pedido"]?> │ <strong>Nome :</strong>
+                                            <?php echo $row["descricao"]?> │ <strong>Quantidade :</strong> 
+                                            <?php echo $row["quantidade"]?> </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <?php }?>
+
+                            <?php }else{
+                                echo 'null';
+                            }?>
+
+                            <?php   }
+
                             
-                            
-                    <?php   }
                     } else {
                     echo '  
                     <h3 class="text-center mb-3 mt-2">Por favor Efetue o Login para ver seu historico </h3>

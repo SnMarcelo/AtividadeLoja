@@ -62,6 +62,7 @@ echo '  <div class="container">
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                         <div class="card py-3 px-2">
                             <h3 class="text-center mb-3 mt-2">Obrigado Por comprar conosco !</h3>
+                            <h3 class="text-center mb-3 mt-2">O numero do seu pedido é '.$cod_pedido.'</h3>
                             <p class="text-center mb-3 mt-2"> Você sera redirecinado para a loja em 5s</p>
 
                             
