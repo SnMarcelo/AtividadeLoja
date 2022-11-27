@@ -79,7 +79,10 @@ $conn->close();
                             <?php }?>
 
                             <?php }else{
-                                echo 'null';
+                                echo '  
+                                <h3 class="text-center mb-3 mt-2">Não Há itens No seu carrinho !</h3>
+                                                   
+                                ';
                             }?>
 
                             <?php   }
