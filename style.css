@@ -171,3 +171,20 @@ a:hover {
     background-position-x: 95%;
     background-position-y: center;
 }
+.zoom  {
+    width: 100%;
+    transition: 0.3s all ease-in-out;
+}
+
+.zoom:hover{
+    transform: scale(1.5);
+}
+
+.zoom2  {
+    width: 100%;
+    transition: 0.3s all ease-in-out;
+}
+
+.zoom2:hover{
+    transform: scale(1.1);
+}
